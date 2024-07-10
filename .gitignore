@@ -1,0 +1,8 @@
+README.md.backup
+
+.vscode/
+/out/
+src/ca-in-the-loop/kernel_huawei_p9_lite/out/
+
+src/avatar-qemu/build/
+src/optee/

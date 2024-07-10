@@ -1,0 +1,14 @@
+services:
+  syncemu:
+    image: syncemu:latest
+    build:
+      context: .
+      target: syncemu
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./src:/src:rw
+      - ./docker/sh-entrypoint.sh:/sh-entrypoint.sh:ro
+      - ./docker/rehost-entrypoint.sh:/rehost-entrypoint.sh:ro
+      - ./docker/ca-in-the-loop-entrypoint.sh:/ca-in-the-loop-entrypoint.sh:ro
+      - ${IN:-./in}:/in:ro
+      - ${OUT:-./out}:/out:rw
